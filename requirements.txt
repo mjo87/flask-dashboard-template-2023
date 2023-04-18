@@ -12,5 +12,5 @@ Flask
 pytest
 beautifulsoup4
 
-gunicorn "web_app:create_app()"
+gunicorn
 
