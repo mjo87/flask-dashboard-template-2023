@@ -43,7 +43,17 @@ class AlphavantageService:
             return DataFrame()
         else:
             return df
-
+    def fetch_unemployment(self):
+        """
+            Fetches unemployment data.
+            Returns the data, or an empty DataFrame if none is available.
+        """
+        request_url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={self.api_key}&datatype=csv"
+        df = read_csv(request_url) #> pandas.DataFrame
+        if "timestamp" not in df.columns:
+            return DataFrame()
+        else:
+            return df
 
 
 
